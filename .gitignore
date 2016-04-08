@@ -1,0 +1,9 @@
+frontend/coverage/
+frontend/dist/
+frontend/node_modules/
+npm-debug.log
+
+backend/build/
+
+.gradle/
+.idea/
