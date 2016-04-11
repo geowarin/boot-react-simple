@@ -13,6 +13,16 @@ module.exports = {
           'components': path.resolve(__dirname, 'src/components'),
           'css': path.resolve(__dirname, 'assets/css')
         }
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.lookup$/,
+            loaders: [
+              'glob'
+            ]
+          }
+        ]
       }
     }
   }

@@ -12,7 +12,11 @@
   },
   "dependencies": {
     "react": "15.0.x",
-    "react-dom": "15.0.x"
+    "react-dom": "15.0.x",
+    "shasta": "shastajs/shasta",
+    "shasta-data-view": "shastajs/shasta-data-view",
+    "tahoe": "shastajs/tahoe#new",
+    "glob-loader": "contra/glob-loader"
   },
   "devDependencies": {
     "nwb": "0.9.x"
