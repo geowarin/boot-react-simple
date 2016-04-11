@@ -11,12 +11,14 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "glob-loader": "contra/glob-loader",
+    "immutable": "^3.7.6",
+    "normalizr": "^2.0.1",
     "react": "15.0.x",
     "react-dom": "15.0.x",
     "shasta": "shastajs/shasta",
     "shasta-data-view": "shastajs/shasta-data-view",
-    "tahoe": "shastajs/tahoe#new",
-    "glob-loader": "contra/glob-loader"
+    "tahoe": "shastajs/tahoe#new"
   },
   "devDependencies": {
     "nwb": "0.9.x"

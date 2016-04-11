@@ -1,23 +1,37 @@
 import React from "react";
-import { Component, PropTypes, connect } from 'shasta';
-import actions from '../core/actions';
+import {connect} from "shasta";
+import actions from "../core/actions";
+import DataComponent from 'shasta-data-view'
 
 @connect({
-  count: 'counter.count'
+  count: 'counter.count',
+  greeting: 'api.subsets.greeting'
 })
-export default class App extends Component {
+export default class App extends DataComponent {
 
-  componentDidMount () {
-  //   fetch('http://localhost:8080/api/hello')
-  //     .then(r => r.text())
-  //     .then(text => this.setState({text}));
+  resolveData() {
+    actions.hello.greet({
+      subset: 'greeting'
+    })
   }
 
-  render () {
+  renderLoader() {
+    return (
+      <div>
+        Loading...
+      </div>
+    )
+  }
+
+  renderData ({greeting, count}) {
     return <div>
       <h2>Welcome to React</h2>
 
-      <p>{this.props.count}</p>
+      <p>{greeting.get('text')}</p>
+
+      <hr/>
+
+      <p>{count}</p>
 
       <button onClick={() => actions.counter.increment()}>
         Increment
@@ -29,5 +43,13 @@ export default class App extends Component {
         Reset
       </button>
     </div>
+  }
+
+  renderErrors(errors) {
+    return (
+      <div>
+        Error
+      </div>
+    )
   }
 }
